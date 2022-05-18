@@ -1,0 +1,1 @@
+const mongoose=require("mongoose"),OrderSchema=new mongoose.Schema({userId:{type:String,required:!0,unique:!0},products:[{productId:{type:String},quantity:{type:Number,default:1}}],amount:{type:Number,required:!0},adress:{type:Object,required:!0},status:{type:String,default:"pending"}},{timestamps:!0});module.exports=mongoose.model("Order",OrderSchema);

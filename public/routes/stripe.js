@@ -1,0 +1,1 @@
+const router=require("express").Router(),stripe=require("stripe")(process.env.STRIPE_KEY);router.post("/paymenty",((e,r)=>{stripe.charges.create({source:e.body.tokenId,ammount:e.body.amount,currency:"brl"},((e,t)=>{e?r.status(500).json(e):r.status(200).json(t)}))})),module.exports=router;

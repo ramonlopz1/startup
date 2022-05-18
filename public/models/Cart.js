@@ -1,0 +1,1 @@
+const mongoose=require("mongoose"),CartSchema=new mongoose.Schema({userId:{type:String,required:!0,unique:!0},products:[{productId:{type:String},quantity:{type:Number,default:1}}]},{timestamps:!0});module.exports=mongoose.model("Cart",CartSchema);
