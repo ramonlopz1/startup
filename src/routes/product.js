@@ -11,7 +11,7 @@ router.post("/", verifyTokenAndAdmin, async (req, res) => {
     try {
         const savedProduct = await newProduct.save();
         res.status(200).json(savedProduct)
-    } catch(err) {
+    } catch (err) {
         res.status(500).json(err)
     }
 })
@@ -62,28 +62,27 @@ router.get("/find/:id", async (req, res) => {
 // GET ALL ProductS
 
 router.get("/", async (req, res) => {
-    // recebe o parâmetro new vindo no url
     const qNew = req.query.new;
     const qCategory = req.query.category;
-
     try {
         let products;
 
-        if(qNew) {
-            products = await Product.find().sort({createdAt: -1}).limit(5)
+        if (qNew) {
+            products = await Product.find().sort({ createdAt: -1 }).limit(1);
         } else if (qCategory) {
-            products = await Product.find({categories: {
-                $in: [qCategory],
-            }})
+            products = await Product.find({
+                categories: {
+                    $in: [qCategory],
+                },
+            });
         } else {
-            products = await Product.find()
+            products = await Product.find();
         }
 
-        res.status(200).json(products)
-
+        res.status(200).json(products);
     } catch (err) {
-        res.status(500).json(err)
+        res.status(500).json(err);
     }
-})
+});
 
 module.exports = router
