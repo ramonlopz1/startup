@@ -1,0 +1,1 @@
+const getProdutos=async()=>(await fetch("http://localhost:5000/api/products")).json();export const services={getProdutos};

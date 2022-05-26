@@ -1,10 +1,9 @@
 const jwt = require("jsonwebtoken")
 
 const verifyToken = (req, res, next) => {
-
     // Recebe o token vindo do headers
     const authHeader = req.headers.token;
-    
+    console.log(req.headers)
     if(authHeader) {
         // retira o Baerer e recebe apenas o hash
         const token = authHeader.split(" ")[1];
@@ -26,8 +25,7 @@ const verifyToken = (req, res, next) => {
 
 const verifyTokenAndAuthorization = (req, res, next) => {
     verifyToken(req, res, () => {
-
-
+      
       if (req.user.id === req.params.id || req.user.isAdmin) {
         next();
       } else {
@@ -39,6 +37,7 @@ const verifyTokenAndAuthorization = (req, res, next) => {
   };
 
   const verifyTokenAndAdmin = (req, res, next) => {
+
     verifyToken(req, res, () => {
 
       if (req.user.isAdmin) {
@@ -46,7 +45,6 @@ const verifyTokenAndAuthorization = (req, res, next) => {
       } else {
         res.status(403).json("You are not alowed to do that!");
       }
-      
       
     });
   };

@@ -56,8 +56,10 @@ router.post('/login', async (req, res) => {
             // retorna um objeto com os dados do usuário, menos o password
 //          
             const dataUser = { ...others, acessToken }
-            res.status(200).json(dataUser)
-            // res.render('usuariocadastrado')
+            
+            res.render('painel.html')
+            res.redirect(`/api/painel`)
+
     } catch(err) {
         console.log(err + "ERROOOO")
     }
