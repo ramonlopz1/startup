@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const bodyParser = require('body-parser')
 const path = require('path')
 const engines = require('consolidate')
+const session = require('express-session')
 
 // routes
 const userRoute = require('./routes/user')
@@ -40,6 +41,12 @@ app.get('/register', (req, res) => res.render('register.html'))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(express.static("."))
+app.use(session({
+    secret: process.env.JWT_SEC,
+    saveUninitialized: false,
+    resave: false
+}))
+
 
 // routes
 app.use("/api/auth", authRoute);

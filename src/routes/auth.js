@@ -57,7 +57,8 @@ router.post('/login', async (req, res) => {
 //          
             const dataUser = { ...others, acessToken }
             
-            res.render('painel.html')
+            req.session.token = acessToken
+
             res.redirect(`/api/painel`)
 
     } catch(err) {

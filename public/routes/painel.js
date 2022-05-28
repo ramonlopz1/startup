@@ -1,0 +1,1 @@
+const{verifyTokenAndAdmin,verifyTokenAndAuthorization}=require("./verifyToken"),router=require("express").Router();router.get("/",verifyTokenAndAuthorization,((e,r)=>{r.render("painel.html")})),router.get("/addproduct",verifyTokenAndAdmin,(async(e,r)=>{try{r.render("add-product.html")}catch(e){r.status(500).json(e)}})),module.exports=router;

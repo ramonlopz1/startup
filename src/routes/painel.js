@@ -1,7 +1,7 @@
-const { verifyTokenAndAdmin } = require('./verifyToken');
+const { verifyTokenAndAdmin, verifyTokenAndAuthorization } = require('./verifyToken');
 const router = require('express').Router();
 
-router.get('/', (req, res) => {
+router.get('/', verifyTokenAndAuthorization, (req, res) => {
     res.render('painel.html')
 })
 
