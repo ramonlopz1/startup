@@ -36,7 +36,6 @@ app.get('/login', (req, res) => res.render('login.html'))
 app.get('/register', (req, res) => res.render('register.html'))
 
 
-
 // config
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json())

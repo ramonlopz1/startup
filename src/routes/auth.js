@@ -16,7 +16,7 @@ router.post('/register', async (req, res) => {
 
     try {
         const savedUser = await newUser.save() // função save do Schema() do mongoDB
-        res.status(201).json(savedUser)
+        res.render('alert-msgs/users-msgs/successfully-registered.html')
     } catch(err) {
         res.status(500).json(err)
     }
@@ -38,7 +38,6 @@ router.post('/login', async (req, res) => {
         const hashedPassword = CryptoJS.AES.decrypt(user.password, process.env.PASS_SEC)
         
         const originalPassword = hashedPassword.toString(CryptoJS.enc.Utf8)
-
 
         originalPassword !== req.body.password && 
             res.status(401).json("Wrong credentials!")

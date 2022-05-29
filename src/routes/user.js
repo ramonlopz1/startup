@@ -10,7 +10,6 @@ const router = require('express').Router();
  */
 router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
 
-
     // Se o password estiver preenchido, encrypt
     if (req.body.password) {
         req.body.password = CryptoJS.AES.encrypt(req.body.password, process.env.PASS_SEC).toString()

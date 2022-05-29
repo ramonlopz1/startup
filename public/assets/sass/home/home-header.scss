@@ -1,0 +1,93 @@
+header {
+    align-items: center;
+    background-color: $cor0;
+    display: flex;
+    flex-direction: column;
+    height: 113px;
+    justify-content: space-between;
+
+    #header__navigation__top,
+    #header__navigation__bottom {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 200px;
+        width: 100%;
+    }
+
+    #header__navigation__top {
+        border-bottom: 2px solid $cor2;
+        height: 70px;
+
+        #navigation__top__search {
+            display: flex;
+        }
+
+        #navigation__top__socialmedia {
+            display: flex;
+
+            .fa-brands {
+                font-size: 23px;
+                margin-left: 20px;
+            }
+        }
+    }
+
+    #header__navigation__bottom {
+        background-color: $cor1;
+        border-bottom: 2px solid $cor2;
+        height: 55px;
+
+        .navigation__bottom__acess,
+        .navigation__bottom__links {
+            align-items: center;
+            display: flex;
+        }
+
+        .navigation__bottom__links {
+            a {
+                color: white;
+                margin-right: 15px;
+            }
+        }
+
+        .navigation__bottom__acess {
+            align-items: center;
+            display: flex;
+
+            a {
+                color: white;
+                font-size: 15px;
+                margin-left: 15px;
+            }
+
+            .acess__btn__login {
+                align-items: center;
+                display: flex;
+                justify-content: space-evenly;
+                width: 150px;
+
+                #btn__login__icon {
+                    align-items: center;
+                    display: flex;
+                    justify-content: center;
+                    font-size: 23px;
+                }
+
+                #btn__login__msg {
+                    font-size: 13px;
+                    width: 109px;
+                }
+            }
+
+            .acess__btn__painel,
+            .acess__btn__logout {
+                display: none;
+            }
+
+            .acess__btn__cart {
+                font-size: 20px;
+            }
+        }
+    }
+}

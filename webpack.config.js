@@ -45,6 +45,9 @@ module.exports = {
         context: path.resolve(__dirname),
         from: "./src",
         to: path.resolve(__dirname, 'public')
+      }, {
+        from: "./src/assets/js",
+        to: path.resolve(__dirname, 'public/assets/js')
       }]
     })
   ],
