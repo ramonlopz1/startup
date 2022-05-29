@@ -1,0 +1,1 @@
+const showAcessMenu=()=>{document.querySelector(".acess__btn__login").addEventListener("click",(e=>{e.preventDefault(),console.log("oi")}))};document.querySelector(".acess__btn__login").addEventListener("click",(e=>{e.preventDefault(),console.log("oi")}));
