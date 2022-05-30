@@ -1,0 +1,1 @@
+document.querySelectorAll("#btns__radios")[0].checked=!0;

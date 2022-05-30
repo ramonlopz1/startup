@@ -1,0 +1,30 @@
+#home__main__banners {
+    align-items: center;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 250px;
+    padding: 20px 0px;
+
+    #banners__btns__radios {
+        align-items: center;
+        display: flex;
+        justify-content: space-evenly;
+        width: 90px;
+
+        #btns__radios {
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+
+            background-color: white;
+            border: none;
+            border-radius: 100%;
+            cursor: pointer;
+            outline: none;
+            height: 18px;
+            width: 18px;
+        }
+    }
+}
