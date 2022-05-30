@@ -1,29 +1,16 @@
 const showAcessMenu = () => {
-    const btnAcess = document.querySelector('#acess__btns')
+    const btnAcess = document.querySelector('.acess__btn__login')
+    const acessMenu = document.querySelector('#acess__menu')
 
-
-    btnAcess.addEventListener('click', event => {
+    btnAcess.addEventListener('mouseover', event => {
         event.preventDefault()
+        acessMenu.classList.add('acess__menu__hover')
+    })
 
-        btnAcess.appendChild(CreateHtmlTemplate())
+    btnAcess.addEventListener('mouseleave', event => {
+        event.preventDefault()
+        acessMenu.classList.remove('acess__menu__hover')
     })
 }
 
 showAcessMenu()
-
-const CreateHtmlTemplate = () => {
-    const element = document.createElement('div')
-    element.classList.add('acess__appended__container')
-    element.innerHTML = 
-    ` <div id="acess__menu">
-        <span>
-            Insira as suas credenciais para uma melhor experiência
-        </span>
-
-        <div id="acess__menu__btns">
-            <a href="">entrar</a>
-            <a href="">cadastrar</a>
-        </div>
-    </div>`
-    return element
-}
