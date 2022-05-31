@@ -1,1 +1,1 @@
-document.querySelectorAll("#btns__radios")[0].checked=!0;
+(()=>{let e=0;const c=document.querySelectorAll("#btns__radios");setInterval((()=>{c[e].checked=!0,c.forEach(((c,t)=>{c.checked=t===e})),e++,e>=3&&(e=0)}),1e3),c.forEach(((c,t)=>{c.addEventListener("click",(()=>{e=t}))}))})();
