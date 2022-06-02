@@ -1,28 +1,30 @@
 (() => {
-    let contador = 0
-    const btnsRadios = document.querySelectorAll('#btns__radios')
+    const btnsRadios = document.querySelectorAll('#btns__radios');
+    let contador = 0;
 
-    setInterval(() => {
-        btnsRadios[contador].checked = true
-
+    // Looping para dar checked e unchecked no btnsRadios
+    const checkedLoop = (contador) => {
         btnsRadios.forEach((btn, idx) => {
-            if (idx !== contador) {
+            if (contador !== idx) {
                 btn.checked = false
             } else {
                 btn.checked = true
             }
         })
+    }
 
-        contador++
-        contador >= 3 ? contador = 0 : contador
 
+    setInterval(() => {
+        checkedLoop(contador);
+        contador++;
+
+        contador >= 3 ? contador = 0 : contador;
     }, 1000)
 
     btnsRadios.forEach((btn, idx) => {
-        
-
         btn.addEventListener('click', () => {
             contador = idx
+            checkedLoop(contador)
         })
     })
 })()
