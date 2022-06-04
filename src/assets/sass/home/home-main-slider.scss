@@ -1,0 +1,43 @@
+#home__main__slider {
+  align-items: center;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  height: 180px;
+
+  #slider__wrapper__slider {
+    background-color: red;
+    height: 80%;
+    overflow: hidden;
+    width: 80%;
+
+    #slider__element__list {
+      align-items: center;
+      display: flex;
+      justify-content: space-evenly;
+
+      height: 100%;
+      width: 230%;
+
+      .element__list__container {
+        align-items: center;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        height: 70%;
+        width: 100px;
+
+        .element {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          background-color: black;
+          
+          border-radius: 100%;
+          height: 90%;
+          width: 90%;
+        }
+      }
+    }
+  }
+}
