@@ -13,11 +13,11 @@
 
     const move = (btn) => {
         if (btn === 0 && translateValue <= -130) {
-            translateValue = translateValue + 130;
+            translateValue += 130;
             wrapperDiv.style.transform = `translateX(${translateValue}px)`;
 
         } else if (btn === 1 && translateValue <= 0 && translateValue > -1300) {
-            translateValue = translateValue + (-130);
+            translateValue += (-130);
             wrapperDiv.style.transform = `translateX(${translateValue}px)`;
         }
     }

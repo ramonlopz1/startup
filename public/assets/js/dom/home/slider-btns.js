@@ -1,0 +1,1 @@
+(()=>{const e=document.querySelector("#slider__element__list");e.style.transition=".6s";let t=0;document.querySelectorAll(".slider__btn").forEach(((e,t)=>{e.addEventListener("click",(e=>{e.preventDefault(),l(t)}))}));const l=l=>{0===l&&t<=-130?(t+=130,e.style.transform=`translateX(${t}px)`):1===l&&t<=0&&t>-1300&&(t+=-130,e.style.transform=`translateX(${t}px)`)}})();
