@@ -18,7 +18,7 @@ const painelRoute = require('./routes/painel')
 dotenv.config();
 
 // views config
-app.set('views', path.join(__dirname, '/view') )
+app.set('views', path.join(__dirname, '/view'))
 app.engine('html', engines.mustache); // assign the swig engine to .html files
 app.set('view engine', "html") // set .html as the default extension
 
@@ -26,8 +26,8 @@ app.set('view engine', "html") // set .html as the default extension
 mongoose.connect(process.env.MONGO_URL)
     .then(() => {
         console.log("DB Connection successfull")
-    }).catch((err) => { 
-        console.log(err) 
+    }).catch((err) => {
+        console.log(err)
     })
 
 // views
@@ -35,11 +35,10 @@ app.get('/', (req, res) => res.render('index.html'))
 app.get('/login', (req, res) => res.render('login.html'))
 app.get('/register', (req, res) => res.render('register.html'))
 
-
 // config
+app.use(express.static(__dirname))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json())
-app.use(express.static("."))
 app.use(session({
     secret: process.env.JWT_SEC,
     saveUninitialized: false,

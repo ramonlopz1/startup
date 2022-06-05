@@ -1,12 +1,32 @@
 #home__main__slider {
   align-items: center;
-  background-color: black;
+  border-bottom: 3px solid $cor2;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   height: 180px;
 
+  .slider__btn {
+    align-items: center;
+    background-color: $cor2;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    outline: none;
+    width: 30px;
+
+    &:hover {
+      background-color: $cor0;
+    }
+
+    .fa-solid {
+      color: white;
+      font-size: 19px;
+    }
+  }
+
   #slider__wrapper__slider {
-    background-color: red;
     height: 80%;
     overflow: hidden;
     width: 80%;
@@ -21,7 +41,6 @@
 
       .element__list__container {
         align-items: center;
-        background-color: white;
         display: flex;
         justify-content: center;
         height: 70%;
@@ -31,7 +50,7 @@
           align-items: center;
           display: flex;
           justify-content: center;
-          background-color: black;
+          background-color: $cor2;
           
           border-radius: 100%;
           height: 90%;
