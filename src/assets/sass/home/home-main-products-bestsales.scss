@@ -1,12 +1,16 @@
-#home__main__produtos__maisvendidos {
+#home__main__products__bestsales {
     
-    #produtos__maisvendidos__list {
+    #products__bestsales__titulo {
+        margin-left: 25px;
+    }
+
+    #products__bestsales__list {
         align-items: center;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
 
-        .maisvendidos__list__element {
+        .bestsales__list__element {
             display: flex;
             align-items: center;
             box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 32%);
@@ -14,10 +18,15 @@
             height: 320px;
             justify-content: space-evenly;
             margin: 10px;
+            transition: .4s;
             width: 200px;
 
             &:nth-of-type(n+6) {
                 display: none;
+            }
+
+            &:hover {
+                transform: scale(105%);
             }
 
             .element__img {
