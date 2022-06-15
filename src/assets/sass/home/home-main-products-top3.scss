@@ -1,0 +1,34 @@
+#home__main__products__top3 {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 70px 0px;
+
+    #products__top3__container {
+        background-color: $cor2;
+        border-radius: 8px;
+        height: 350px;
+        width: 70%;
+
+        #conainter__tabs {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            .tabs__btns {
+                height: 35px;
+                width: 33.33%;
+            
+
+                @for $i from 1 through 3 {
+
+                   &:nth-child(#{$i}) {
+                    background-color: $cor2;
+                   }
+                }
+                
+            }
+        }
+    }
+}
